@@ -34,10 +34,15 @@ int main()
     if (flag) {
         for (int i = 0; i < arraySize; i++) {
             bool prime = true;
-            for (int j = 2; j <= sqrt(array[i]); j++){
-                if (array[i] % j == 0) {
-                    prime = false; 
+            if (array[i] != 1) {
+                for (int j = 2; j <= sqrt(array[i]); j++){
+                    if (array[i] % j == 0) {
+                        prime = false; 
+                    }
                 }
+            }
+            else {
+                prime = false;
             }
             if (prime) {
                 cout << endl;
